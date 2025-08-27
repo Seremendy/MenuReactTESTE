@@ -1,6 +1,6 @@
-# React GitHub Explorer
+# Menu React Teste
 
-Bem-vindo ao React GitHub Explorer! Esta é uma Single Page Application (SPA) construída com React que utiliza a API do GitHub para buscar, listar e exibir perfis de usuários. O projeto foi desenvolvido com uma arquitetura moderna, focando em componentização, gerenciamento de estado global e performance.
+Bem-vindo ao Menu React Teste! Esta é uma Single Page Application (SPA) construída com React que utiliza a API do GitHub para buscar, listar e exibir perfis de usuários. O projeto foi desenvolvido com uma arquitetura moderna, focando em componentização, gerenciamento de estado global e performance.
 
 É um exemplo prático de como estruturar uma aplicação React escalável, utilizando ferramentas como Context API para estado, React Router para navegação e Styled Components para estilização.
 
