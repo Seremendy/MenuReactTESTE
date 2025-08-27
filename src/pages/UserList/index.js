@@ -17,7 +17,6 @@ const UserListPage = () => {
     const [query, setQuery] = useState('');
     const [page, setPage] = useState(1);
     
-    // useCallback para evitar recriação da função em cada render
     const fetchUsers = useCallback(async () => {
         if (!query) return;
         setLoading(true);
@@ -36,11 +35,10 @@ const UserListPage = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             fetchUsers();
-        }, 500); // Debounce para evitar chamadas excessivas na API ao digitar
+        }, 500);
         return () => clearTimeout(timer);
     }, [fetchUsers]);
 
-    // useMemo para evitar remapear a lista de usuários desnecessariamente
     const memoizedUsers = useMemo(() => users.map(user => (
         <UserItem key={user.id} user={user} />
     )), [users]);
