@@ -60,42 +60,23 @@ Para executar este projeto em sua máquina, siga os passos abaixo.
 ### **Passo a Passo**
 
 1. **Clone o repositório:**
-   ```bash
-   git clone [https://github.com/seu-usuario/react-github-explorer.git](https://github.com/seu-usuario/react-github-explorer.git)
-   ```
-
-2. **Acesse a pasta do projeto:**
-   ```bash
-   cd react-github-explorer
-   ```
-
-3. **Instale as dependências:**
+2. **Instale as dependências:**
    ```bash
    npm install
    ```
-
-4. **Configure as variáveis de ambiente:**
-   - Crie um arquivo chamado `.env` na raiz do projeto.
-   - Adicione as seguintes credenciais para o login de desenvolvimento:
+3. **Configure as variáveis de ambiente:**
+    - Um arquivo chamado `.env` na raiz do projeto tem a senha eo login.
+  
      ```env
      REACT_APP_LOGIN=admin
      REACT_APP_PASSWORD=admin123
      ```
-   > **Aviso de Segurança:** Este método de login é apenas para fins de estudo e **não é seguro para produção**.
-
-5. **Inicie a aplicação:**
+4. **Inicie a aplicação:**
    ```bash
    npm start
    ```
-
+   
+---
 A aplicação estará disponível em `http://localhost:3000`.
 
 ---
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE.md](LICENSE.md) para mais detalhes.
-
----
-
-Feito com dedicação por [Rodrigo Morello](https://github.com/Seremendy) 👋
