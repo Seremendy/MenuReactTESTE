@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# React GitHub Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bem-vindo ao React GitHub Explorer! Esta é uma Single Page Application (SPA) construída com React que utiliza a API do GitHub para buscar, listar e exibir perfis de usuários. O projeto foi desenvolvido com uma arquitetura moderna, focando em componentização, gerenciamento de estado global e performance.
 
-## Available Scripts
+É um exemplo prático de como estruturar uma aplicação React escalável, utilizando ferramentas como Context API para estado, React Router para navegação e Styled Components para estilização.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Funcionalidades Principais
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **- Autenticação Simulada:** Uma tela de login que utiliza variáveis de ambiente para simular um acesso seguro.
+- **- Rotas Protegidas:** Apenas usuários autenticados podem acessar as páginas principais da aplicação.
+- **- Listagem de Usuários:** Busca dinâmica de usuários do GitHub com funcionalidade de **pesquisa** e **paginação**.
+- **- Página de Perfil Detalhada:** Ao clicar em um usuário, uma página dedicada exibe suas estatísticas, como número de repositórios, seguidores e quem ele segue.
+- **- Menu Lateral Animado:** Um menu (`Side Menu`) expansível com animações fluidas, construído do zero com CSS e Styled Components.
+- **- Gerenciamento de Estado Global:** Utilização da **Context API** para gerenciar o estado de autenticação e a visibilidade do menu lateral em toda a aplicação.
+- **- Otimização de Performance:** Uso de hooks como `useCallback` e `useMemo` para memoizar funções e componentes, evitando re-renderizações desnecessárias.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Tecnologias e Arquitetura
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Este projeto foi construído utilizando as seguintes tecnologias e conceitos:
 
-### `npm run build`
+- **[React](https://reactjs.org/) (v18+):** Biblioteca para construção da UI.
+- **[React Router DOM](https://reactrouter.com/):** Para gerenciamento de rotas e navegação.
+- **[Styled Components](https://styled-components.com/):** Para estilização componentizada e CSS-in-JS.
+- **[Axios](https://axios-http.com/):** Cliente HTTP para realizar as requisições à API do GitHub de forma centralizada.
+- **Hooks:**
+  - `useState` e `useEffect` para estado e ciclo de vida dos componentes.
+  - `useContext` para consumir estados globais (autenticação e menu).
+  - `useCallback` e `useMemo` para otimizações de performance.
+  - `useParams` para extrair parâmetros dinâmicos da URL.
+- **Context API:** Para criar um sistema de gerenciamento de estado sem a necessidade de bibliotecas externas como Redux.
+- **ESLint:** Para garantir a qualidade e padronização do código.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Estrutura de Pastas
+O projeto segue uma estrutura organizada para separar responsabilidades:
+```
+src/
+|-- components/  # Componentes reutilizáveis (Header, SideMenu)
+|-- context/     # Provedores de contexto (AuthContext, MenuContext)
+|-- pages/       # Componentes de página (Login, UserList, UserProfile)
+|-- services/    # Configuração centralizada do Axios (api.js)
+|-- styles/      # Estilos globais
+|-- App.js       # Componente principal com as rotas
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Como Executar o Projeto
 
-### `npm run eject`
+Para executar este projeto em sua máquina, siga os passos abaixo.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **Pré-requisitos**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [Node.js](https://nodejs.org/en/) (v16 ou superior)
+- [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### **Passo a Passo**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/seu-usuario/react-github-explorer.git](https://github.com/seu-usuario/react-github-explorer.git)
+   ```
 
-## Learn More
+2. **Acesse a pasta do projeto:**
+   ```bash
+   cd react-github-explorer
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Configure as variáveis de ambiente:**
+   - Crie um arquivo chamado `.env` na raiz do projeto.
+   - Adicione as seguintes credenciais para o login de desenvolvimento:
+     ```env
+     REACT_APP_LOGIN=admin
+     REACT_APP_PASSWORD=admin123
+     ```
+   > **Aviso de Segurança:** Este método de login é apenas para fins de estudo e **não é seguro para produção**.
 
-### Code Splitting
+5. **Inicie a aplicação:**
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+A aplicação estará disponível em `http://localhost:3000`.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📄 Licença
 
-### Making a Progressive Web App
+Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE.md](LICENSE.md) para mais detalhes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feito com dedicação por [Rodrigo Morello](https://github.com/Seremendy) 👋
